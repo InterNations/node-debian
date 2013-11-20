@@ -49,10 +49,9 @@ if [ ! -d "$node_dir/debian" ]; then
 fi
 
 cd "$node_dir"
-dpkg-buildpackage $srcdeb -uc -j6
+dpkg-buildpackage $srcdeb -uc -us -j6
 
 cd -
 
 [ "$srcdeb" = "" ]   && ls -l nodejs_*deb
 [ "$srcdeb" = "-S" ] && ls -l nodejs_*
-
