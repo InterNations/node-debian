@@ -40,7 +40,7 @@ if [ ! -d "$node_dir/debian" ]; then
 	
 	echo "Creating $node_dir/debian ..."
 	cp -a deb "$node_dir/debian"
-	sed -e "s/\${VERSION}/${VERSION}/" deb/changelog > "$node_dir/debian/changelog"
+    sed -e "s/\${VERSION}/1:${VERSION}~internations+1/" deb/changelog > "$node_dir/debian/changelog"
 
 	if [ ! -z "$patchfile" ]; then
 		echo "Patching ..."
